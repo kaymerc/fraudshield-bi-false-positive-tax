@@ -200,6 +200,18 @@ The notebook uses relative paths and exports refreshed tables and figures into `
 
 ---
 
+## Methodological Notes
+
+For this project, I evaluated the thresholds and cost recommendations using the test dataset that came with the Kaggle data. This approach was practical for the Capstone, but in a production setting I would use a separate validation sample to select the threshold and then confirm the final results on an untouched holdout dataset. Using the same data for both threshold selection and evaluation can make performance and cost estimates appear slightly better than they may be in practice.
+
+The false-positive cost scenarios were based on a fixed estimated cost for each alert. This made the scenarios easier to compare, but it does not capture every possible business impact. Future analysis could include the value of the transaction, the risk of a lost sale, customer-contact expenses, and the possible long-term cost of customer dissatisfaction or attrition.
+
+The false-positive segmentation analysis used logistic regression at the 0.70 threshold because it produced enough false positives to support meaningful comparisons across transaction categories, amounts, and times of day. Future research should repeat this analysis using gradient boosting at its selected operating threshold. Although gradient boosting produced fewer false positives, the 1,173 alerts generated at the 0.10 threshold would still provide enough observations for a focused segment analysis.
+
+Gender was included as a feature in this simulated academic analysis. Before using a similar model in a real business setting, the organization should evaluate whether sensitive attributes such as gender should be removed and should compare error rates across customer groups to identify possible fairness concerns.
+
+---
+
 ## Limitations
 
 - The dataset is simulated and may not reproduce every real-world fraud behavior.
