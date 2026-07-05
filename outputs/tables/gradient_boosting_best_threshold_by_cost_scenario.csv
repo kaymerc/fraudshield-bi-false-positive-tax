@@ -1,0 +1,4 @@
+model,scenario,threshold,false_positives,false_negatives,true_positives,missed_fraud_amount,estimated_false_positive_cost,estimated_false_negative_cost,estimated_total_cost
+Gradient Boosting,High Cost,0.1,1173,258,1887,50531.52,35190,101063.04,136253.03999999998
+Gradient Boosting,Low Cost,0.1,1173,258,1887,50531.52,5865,50531.52,56396.52
+Gradient Boosting,Moderate Cost,0.1,1173,258,1887,50531.52,17595,75797.28,93392.28

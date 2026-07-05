@@ -1,0 +1,7 @@
+model,scenario,threshold,false_positives,false_negatives,missed_fraud_amount,estimated_total_cost
+Gradient Boosting,High Cost,0.1,1173,258,50531.52,136253.03999999998
+Logistic Regression,High Cost,0.8,6802,748,78187.67,360435.33999999997
+Gradient Boosting,Low Cost,0.1,1173,258,50531.52,56396.52
+Logistic Regression,Low Cost,0.7,10062,599,32055.03,82365.03
+Gradient Boosting,Moderate Cost,0.1,1173,258,50531.52,93392.28
+Logistic Regression,Moderate Cost,0.7,10062,599,32055.03,199012.54499999998

@@ -1,0 +1,4 @@
+hypothesis,null_statement,main_evidence,decision
+H01,"Changes in classification threshold do not significantly change false positives, fraud detection, or estimated cost.","Threshold changes produced large differences in false positives, false negatives, recall, review volume, and estimated total cost.",Reject the null hypothesis
+H02,Transaction characteristics are not significantly associated with false-positive status.,"Amount differed significantly (p < .001); category was associated with false positives, chi-square(13) = 21,727.11, p < .001; hour was associated with false positives, chi-square(23) = 791.85, p < .001.",Reject the null hypothesis
+H03,Cost-based scenario analysis does not produce meaningful differences across thresholds.,The lowest-cost threshold changed by model and cost assumptions. Gradient boosting also produced lower estimated total cost than logistic regression in every scenario.,Reject the null hypothesis

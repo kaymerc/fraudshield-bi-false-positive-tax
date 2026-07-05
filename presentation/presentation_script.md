@@ -1,0 +1,34 @@
+# FraudShield BI Module 8 Presentation Script
+
+## Slide 1 - Title
+Good day, my name is Atta Febri-Yeboah. My capstone project is FraudShield BI: Quantifying the Impact of False Positives in Credit Card Fraud Detection. The main idea behind this project is that fraud prevention should not only be judged by how much fraud it catches. It also needs to be judged by how much unnecessary disruption it creates for legitimate customers. In this presentation, I will summarize the business problem, the dataset, the methods, the model results, the threshold and cost analysis, and how the Power BI dashboard turns the findings into a decision-support tool.
+
+## Slide 2 - Business Problem
+The business problem I studied is the tension between fraud protection and customer experience. A fraud model can look effective if it catches suspicious activity, but if it creates too many false positives, it can also create a hidden cost. Those costs may include manual review, customer service contact, declined purchases, and reduced customer trust. My project calls this the False Positive Tax because it is a cost that may not be visible if the organization only focuses on model accuracy.
+
+## Slide 3 - Research Questions and Hypotheses
+The project was guided by three research questions. First, I studied how changing the classification threshold affected false positives, fraud detection, and estimated cost. Second, I examined which transaction characteristics were associated with false positives. Third, I evaluated how a dashboard and scenario analysis could help decision-makers compare fraud prevention with customer friction. The analysis led to rejection of all three null hypotheses because the data showed meaningful changes across thresholds, transaction segments, and cost scenarios.
+
+## Slide 4 - Dataset and Ethics
+The dataset came from the Kaggle credit card transactions fraud detection dataset, which was generated using Sparkov and contains simulated transaction records. I used the training file with 1,296,675 records and the testing file with 555,719 records. The fraud rate in the training data was only about 0.579 percent, which confirmed that this was a highly imbalanced classification problem. Ethically, I did not use employer data, real customer data, or internal fraud procedures. I also excluded direct identifiers such as credit card number, names, transaction number, street address, and merchant name.
+
+## Slide 5 - Exploratory Findings
+The exploratory analysis showed that fraud was not evenly distributed. Some transaction categories had much higher fraud rates than others. Online shopping, miscellaneous online transactions, and grocery point-of-sale transactions were among the highest categories. Time of day also mattered. The fraud rate increased sharply around 10:00 p.m. and 11:00 p.m., while most daytime hours were much lower. These patterns helped support the idea that transaction characteristics are important when evaluating fraud and false-positive decisions.
+
+## Slide 6 - Model Comparison
+I compared class-weighted logistic regression with histogram-based gradient boosting. Logistic regression was useful as an interpretable baseline, but at the default 0.50 threshold it produced 67,204 false positives and only 2.31 percent precision. Gradient boosting performed much better. It produced only 163 false positives, with 91.14 percent precision, 78.18 percent recall, and an F1-score of 84.17 percent. This was one of the strongest findings in the project.
+
+## Slide 7 - Threshold Analysis
+Threshold analysis was important because the default 0.50 cutoff is not automatically the best business choice. For logistic regression, increasing the threshold from 0.50 to 0.70 reduced false positives from 67,204 to 10,062, while true positives declined from 1,589 to 1,546. Gradient boosting had better separation, so it could use a lower threshold to catch more fraud without producing the same level of false-positive burden. This shows that threshold selection is not a minor technical detail. It directly affects review workload, customer friction, fraud capture, and cost.
+
+## Slide 8 - False-Positive Impact
+The false-positive analysis showed that false positives were not evenly distributed across legitimate transactions. Travel transactions had the highest false-positive rate, at about 13.02 percent. Miscellaneous point-of-sale transactions were also high. False-positive transactions had a much higher average amount than correctly approved transactions. This matters because a false positive on a travel purchase may create more customer frustration than a routine transaction. The recommendation is not simply to flag fewer transactions, but to manage high-impact segments more carefully using step-up authentication, customer confirmation, or manual review.
+
+## Slide 9 - Cost Scenario Recommendation
+The cost scenario analysis applied low, moderate, and high assumptions to false-positive cost and missed fraud cost. Gradient boosting produced the lowest estimated total cost in every scenario. Under the moderate-cost scenario, the recommendation was gradient boosting at a 0.10 threshold, with an estimated total cost of $93,392.28. This result had 1,173 false positives, 258 false negatives, and 1,887 true positives. This threshold was not the highest F1-score threshold, but it was the lowest-cost threshold under the business assumptions. That is the main lesson: the best statistical threshold and the best business threshold may not always be the same.
+
+## Slide 10 - Power BI Dashboard
+The dashboard is where the project becomes a business intelligence tool. I built four pages: an executive overview, a threshold decision lab, a cost and recommendation page, and a false-positive deep dive. This slide shows the actual Executive Overview page from Power BI. The goal was to make the results understandable to a fraud manager or business stakeholder, not only to a data analyst. I validated the dashboard values against the Python export files, and the final project package includes both the editable PBIX file and a four-page PDF export.
+
+## Slide 11 - Conclusion and Closure
+In conclusion, this project showed that fraud detection should be evaluated as both a technical and business problem. Accuracy alone is not enough in an imbalanced fraud dataset. Gradient boosting was the stronger model, and threshold selection changed the practical business outcome. The dashboard helps decision-makers see the tradeoff between fraud capture, customer friction, review volume, and cost. For project closure, the GitHub package includes the README, validated outputs, figures, final reports, presentation materials, the editable Power BI dashboard, its PDF export, dashboard page previews, and a data README explaining how to obtain the Kaggle dataset without uploading large raw files.
