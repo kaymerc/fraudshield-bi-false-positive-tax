@@ -1,0 +1,21 @@
+# Raw Kaggle data (download locally; do not commit)
+data/fraudTrain.csv
+data/fraudTest.csv
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Archives and temporary files
+*.zip
+*.tmp
+~$*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
